@@ -26,4 +26,27 @@
 		color: #232134;
 		margin-right: 280px;
 	}
+
+	nav {
+		display: flex;
+		gap: 60px;
+
+		a,
+		.active {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			display: flex;
+			align-items: center;
+			color: #232134;
+			text-decoration: none;
+			transition: all 0.2s;
+		}
+
+		.active {
+			color: #5e96fc;
+		}
+	}
 }

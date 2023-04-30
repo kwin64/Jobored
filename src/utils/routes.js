@@ -1,6 +1,7 @@
-import { Favorites } from '../components/favorites/Favorites'
-import { Main } from '../components/main/Main'
-import { NotFound } from '../components/notFound/NotFound'
+import { Favorites } from "../pages/favorites/Favorites";
+import { Main } from "../pages/main/Main";
+import { NotFound } from "../pages/notFound/NotFound";
+
 
 export const paths = [
 	{ path: '/', component: <Main /> },

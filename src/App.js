@@ -7,8 +7,9 @@ function App() {
 	return (
 		<Layout>
 			<Routes>
-				{paths.map(({ path, component }) => (
+				{paths.map(({ path, component }, index) => (
 					<Route
+						key={index}
 						path={path}
 						element={component}
 					/>

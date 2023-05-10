@@ -1,24 +1,23 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import AuthService from '../../services/auth.services'
+import AuthService from '../../services/authService'
 
-export const fetchAuth = createAsyncThunk('posts/fetchAuth', async params => {
-	const { data } = await AuthService.auth(params)
+export const fetchAuth = createAsyncThunk('auth/fetchAuth', async params => {
+	const { data } = await AuthService.authMe(params)
 	return data
 })
 
 const initialState = {
-	data: null,
+	data: [],
 	status: 'loading'
 }
 
 const authSlice = createSlice({
 	name: 'auth',
 	initialState,
-	reducers: {},
 	extraReducers: {
 		[fetchAuth.pending]: state => {
 			state.status = 'loading'
-			state.data = null
+			state.data = []
 		},
 		[fetchAuth.fulfilled]: (state, action) => {
 			state.status = 'loaded'
@@ -27,11 +26,9 @@ const authSlice = createSlice({
 		},
 		[fetchAuth.rejected]: state => {
 			state.status = 'error'
-			state.data = null
+			state.data = []
 		}
 	}
 })
-
-export const selectAuthData = state => state.auth.data
 
 export const authReducer = authSlice.reducer

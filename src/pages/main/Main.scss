@@ -1,13 +1,13 @@
 .main__container {
-	padding: 40px 157.58px 0;
+	padding: 40px 0 0;
 	display: flex;
 	gap: 28px;
+	height: 100%;
 
 	.content__container {
-		
+		width: 71vw;
+
 		.vacancies__container {
-			width: 773px;
-			height: 660px;
 		}
 		.pagination {
 			display: flex;

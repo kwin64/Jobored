@@ -34,7 +34,7 @@ function App() {
 				paymentToVacancies,
 				catalogues: 33,
 				count: 4,
-				page: 1
+				page: 4
 			})
 		)
 	}

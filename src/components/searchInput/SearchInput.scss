@@ -19,7 +19,7 @@
 		font-family: 'Inter';
 		font-style: normal;
 		font-weight: 400;
-		font-size: 14px;
+		font-size: clamp(0.625rem, calc(0.5536rem + 0.3571vw), 0.875rem);
 		line-height: 21px;
 		color: #acadb9;
 	}

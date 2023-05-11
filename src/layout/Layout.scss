@@ -1,11 +1,14 @@
 .layout__container {
 	max-width: 1440px;
-	min-height: 100vh;
+	height: 100vh;
 	background: #f7f7f8;
 	border-radius: 12px;
-	margin: 0 auto;
+	margin: auto auto;
 
 	.main__content {
 		background: #f7f7f8;
+		width: 77.5vw;
+		height: calc(91vh);
+		margin: 0 auto;
 	}
 }

@@ -14,15 +14,13 @@ export const Vacancies = ({ vacancies }) => {
 		navigate(`/vacancy/${id}`)
 	}
 
-	const addBookmark = id => {
-		
-	}
+	const addBookmark = id => {}
 
 	return (
 		<div className={loadingVacancies === 'loading' ? 'loader' : 'vacancies'}>
 			{loadingVacancies === 'loading' ? (
 				<Loader />
-			) : vacancies?.length > 0 ? (
+			) : vacancies?.length > 0 && loadingVacancies === 'loaded' ? (
 				vacancies?.map(
 					({
 						profession,

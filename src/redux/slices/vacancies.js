@@ -21,6 +21,19 @@ const initialState = {
 const vacanciesSlice = createSlice({
 	name: 'vacancies',
 	initialState,
+	reducers: {
+		setVacanciesFavorites(state, actions) {
+			const vacancy = actions.payload
+			const vacanciesFavoritesIndex = state.vacanciesFavorites.findIndex(
+				value => value.id === vacancy.id
+			)
+			if (vacanciesFavoritesIndex === -1) {
+				state.vacanciesFavorites.push(vacancy)
+			} else {
+				state.vacanciesFavorites.splice(vacanciesFavoritesIndex, 1)
+			}
+		}
+	},
 	extraReducers: {
 		[fetchVacancies.pending]: state => {
 			state.status = 'loading'

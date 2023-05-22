@@ -15,41 +15,7 @@ export const Vacancies = ({ vacancies }) => {
 	}
 
 	const addBookmark = id => {
-		let storage = JSON.parse(localStorage.getItem('bookmarks'))
-		const newVacancy = vacancies?.filter(item => item.id === id)[0]
-		if (storage) {
-			let bookmarks = JSON.parse(localStorage.getItem('bookmarks'))
-			bookmarks.push(newVacancy)
-			localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
-		}
-		// if (storage && storage.map(item => item.id === id)) {
-		// 	const bookmarks = JSON.parse(localStorage.getItem('bookmarks'))
-		// 	const newBookmarks = bookmarks.filter(vacancy => vacancy.id !== id)
-		// 	localStorage.setItem('bookmarks', JSON.stringify(newBookmarks))
-		// }
-		// else {
-		// 	console.log('2')
-		// 	let bookmarks = JSON.parse(localStorage.getItem('bookmarks'))
-		// 	bookmarks.push(newVacancy)
-		// 	localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
-		// }
-
-		// if (storage.length > 0 && storage.filter(item => item.id === id)) {
-		// 	const vacancies = storage.filter(item => item.id !== id)
-		// 	localStorage.setItem('bookmarks', JSON.stringify(vacancies))
-		// }
-
-		// if (storage.filter(item => item.id !== id)) {
-		// 	console.log(id)
-		// 	const newVacancy = vacancies.data.objects?.filter(item => item.id === id)[0]
-		// 	storage.push(newVacancy)
-		// 	localStorage.setItem('bookmarks', JSON.stringify(storage))
-		// }
-		// if (storage.length === 0 || storage.filter(item => item.id !== id)) {
-		// 	const newVacancy = vacancies.data.objects?.filter(item => item.id === id)
-		// 	storage.push(newVacancy)
-		// 	localStorage.setItem('bookmarks', JSON.stringify(storage))
-		// }
+		
 	}
 
 	return (
@@ -87,7 +53,7 @@ export const Vacancies = ({ vacancies }) => {
 					)
 				)
 			) : (
-				<NotFound description={'Упс, ничего не найдено!'}/>
+				<NotFound description={'Упс, ничего не найдено!'} />
 			)}
 		</div>
 	)

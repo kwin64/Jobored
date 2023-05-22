@@ -1,5 +1,5 @@
 import { Loader } from '@mantine/core'
-import parse from 'html-react-parser'
+import DOMPurify from 'dompurify'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -53,7 +53,11 @@ const DetailedVacancy = () => {
 				classname={'preview'}
 				changeBookmark={addBookmark}
 			/>
-			<div className='description_vacancy'>{parse(`${currentVacancy.vacancyRichText}`)}</div>
+			<div
+				className='description_vacancy'
+				dangerouslySetInnerHTML={{
+					__html: DOMPurify.sanitize(currentVacancy.vacancyRichText)
+				}}></div>
 		</div>
 	)
 }

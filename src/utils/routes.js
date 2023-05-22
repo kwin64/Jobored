@@ -1,11 +1,11 @@
-import { lazy } from 'react'
-
-const Favorites = lazy(() => import('../pages/favorites/Favorites'))
-const Main = lazy(() => import('../pages/main/Main'))
-const NotFound = lazy(() => import('../pages/notFound/NotFound'))
+import Main from '../pages/main/Main'
+import NotFound from '../pages/notFound/NotFound'
+import Favorites from '../pages/favorites/Favorites'
+import DetailedVacancy from '../pages/detailedVacancy/DetailedVacancy'
 
 export const paths = [
 	{ path: '/', component: <Main /> },
 	{ path: '/favorites', component: <Favorites /> },
+	{ path: '/vacancy/:idVacancy', component: <DetailedVacancy /> },
 	{ path: '*', component: <NotFound /> }
 ]

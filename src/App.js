@@ -4,18 +4,16 @@ import { Route, Routes } from 'react-router-dom'
 import './index.scss'
 import { Layout } from './layout/Layout'
 import { fetchAuth } from './redux/slices/auth'
-import { fetchVacancies } from './redux/slices/vacancies'
+import { fetchCatalogues } from './redux/slices/vacancies'
 import { paths } from './utils/routes'
+import { Loader } from './components/loader/Loader'
 
 function App() {
 	const dispatch = useDispatch()
-	const keywordVacancies = React.useState('')
-	const paymentFromVacancies = React.useState(0)
-	const paymentToVacancies = React.useState(100000)
+
+	const loadingAuthMe = useSelector(state => state.auth.status)
 
 	const initData = async () => {
-		//promise all
-
 		await dispatch(
 			fetchAuth({
 				login: process.env.REACT_APP_LOGIN,
@@ -26,39 +24,37 @@ function App() {
 			})
 		)
 
-		await dispatch(
-			fetchVacancies({
-				published: 1,
-				keywordVacancies,
-				paymentFromVacancies,
-				paymentToVacancies,
-				catalogues: 33,
-				count: 4,
-				page: 4
-			})
-		)
+		await dispatch(fetchCatalogues())
 	}
 
 	React.useEffect(() => {
-		// !window.localStorage.getItem('token') &&
 		initData()
+
+		!localStorage.getItem('bookmarks') && localStorage.setItem('bookmarks', JSON.stringify([]))
+
 		return window.localStorage.setItem('token', '')
 	}, [])
 
+	if (loadingAuthMe === 'loading') {
+		return <Loader />
+	}
+
 	return (
-		<Routes>
-			<Route
-				path='/'
-				element={<Layout />}>
-				{paths.map(({ path, component }, index) => (
-					<Route
-						key={index}
-						path={path}
-						element={component}
-					/>
-				))}
-			</Route>
-		</Routes>
+		<div className='app__container'>
+			<Routes>
+				<Route
+					path='/'
+					element={<Layout />}>
+					{paths.map(({ path, component }, index) => (
+						<Route
+							key={index}
+							path={path}
+							element={component}
+						/>
+					))}
+				</Route>
+			</Routes>
+		</div>
 	)
 }
 

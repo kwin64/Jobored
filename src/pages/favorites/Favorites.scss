@@ -1,0 +1,31 @@
+.container {
+	padding: 40px 0 0;
+	display: flex;
+	gap: 28px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 16px;
+	width: 100%;
+	height: auto;
+	border: 1px solid;
+
+	.favorites {
+		width: 773px;
+		height: 612px;
+		border: 1px solid;
+	}
+
+	.pagination {
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+		border: 1px solid;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	.container {
+		height: 800px;
+	}
+}

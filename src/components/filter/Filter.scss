@@ -1,5 +1,60 @@
 .filter {
-  width: 28vw;
-  height: 360px;
-  border: 1px solid;
+	width: 315px;
+	height: 360px;
+	padding: 20px;
+	gap: 10px;
+	background: #ffffff;
+	border: 1px solid #eaebed;
+	border-radius: 12px;
+
+	.title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 32px;
+
+		h1 {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 700;
+			font-size: clamp(1.25rem, calc(1.3571rem + -0.5357vw), 0.875rem);
+			line-height: 20px;
+			color: #232134;
+		}
+
+		.reset {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 500;
+			font-size: clamp(0.875rem, calc(0.9464rem + -0.3571vw), 0.625rem);
+			line-height: 20px;
+			display: flex;
+			align-items: center;
+			color: #acadb9;
+			cursor: pointer;
+
+			p {
+				margin-right: 9px;
+			}
+		}
+	}
+
+	.industry,
+	.salary {
+		margin-bottom: 20px;
+
+		input {
+			margin-bottom: 8px;
+		}
+	}
+
+	.select__title {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 700;
+		font-size: clamp(1rem, calc(1.0714rem + -0.3571vw), 0.75rem);
+		line-height: 19px;
+		color: #232134;
+		margin-bottom: 9px;
+	}
 }

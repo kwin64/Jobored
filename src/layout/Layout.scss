@@ -1,14 +1,22 @@
 .layout__container {
-	max-width: 1440px;
+	width: 100vw;
 	height: 100vh;
 	background: #f7f7f8;
 	border-radius: 12px;
-	margin: auto auto;
 
 	.main__content {
 		background: #f7f7f8;
-		width: 77.5vw;
-		height: calc(91vh);
-		margin: 0 auto;
+		max-width: 1116px;
+		margin: 0 162px;
+		display: flex;
+		justify-content: space-between;
+		min-height: 460px;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	.layout__container {
+		width: 1440px;
+		height: 900px;
 	}
 }
